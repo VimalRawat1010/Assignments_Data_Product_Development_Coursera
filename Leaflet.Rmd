@@ -9,8 +9,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
 ```
 
-# Vimal
-```{r,eval=TRUE}
+#Date: "7/23/2017"
+
+```{r,echo=FALSE, comment=""}
 library(leaflet)
 
 df <- data.frame(lat =c(27.1750, 48.8584,41.8902,40.6892), lng=c(78.0422,2.2945,12.4922,-74.044502))
@@ -24,7 +25,7 @@ url <- c(
   )
 
 
-my_map <- df %>% leaflet() %>% addProviderTiles("OpenTopoMap") %>% addTiles()  %>% addMarkers(popup= url )
+my_map <- df %>% leaflet() %>%  addTiles()  %>% addMarkers(popup= url )
 my_map
 ```
 
