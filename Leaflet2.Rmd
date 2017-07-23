@@ -1,0 +1,31 @@
+---
+title: "leaflet"
+author: "Vimal"
+date: "7/23/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+```
+
+#Date: "7/23/2017"
+
+```{r,echo=FALSE, comment=""}
+library(leaflet)
+
+df <- data.frame(lat =c(27.1750, 48.8584,41.8902,40.6892), lng=c(78.0422,2.2945,12.4922,-74.044502))
+#wonders = c("Taj Mahal", "Eiffel Tower","Colosseum", "Statue of Liberty") 
+#my_map  <- leaflet() 
+url <- c(
+  "<a href= 'https://en.wikipedia.org/wiki/Taj_Mahal'> Taj_Mahal </a>",
+  "<a href= 'https://en.wikipedia.org/wiki/Eiffel_Tower'> Eiffel_Tower </a>",
+  "<a href= 'https://en.wikipedia.org/wiki/Colosseum'> Colosseum </a>",
+  "<a href= 'https://en.wikipedia.org/wiki/Statue_of_Liberty'> Statue_of_Liberty </a>"
+  )
+
+
+my_map <- df %>% leaflet() %>%  addTiles()  %>% addMarkers(popup= url )
+my_map
+```
+
