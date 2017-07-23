@@ -1,30 +1,30 @@
 ---
-title: "Leaflet"
+title: "leaflet"
 author: "Vimal"
-date: "7/24/2017"
+date: "7/23/2017"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
 ```
 
-## R Markdown
+# Vimal
+```{r,eval=TRUE}
+library(leaflet)
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+df <- data.frame(lat =c(27.1750, 48.8584,41.8902,40.6892), lng=c(78.0422,2.2945,12.4922,-74.044502))
+#wonders = c("Taj Mahal", "Eiffel Tower","Colosseum", "Statue of Liberty") 
+#my_map  <- leaflet() 
+url <- c(
+  "<a href= 'https://en.wikipedia.org/wiki/Taj_Mahal'> Taj_Mahal </a>",
+  "<a href= 'https://en.wikipedia.org/wiki/Eiffel_Tower'> Eiffel_Tower </a>",
+  "<a href= 'https://en.wikipedia.org/wiki/Colosseum'> Colosseum </a>",
+  "<a href= 'https://en.wikipedia.org/wiki/Statue_of_Liberty'> Statue_of_Liberty </a>"
+  )
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+my_map <- df %>% leaflet() %>% addProviderTiles("OpenTopoMap") %>% addTiles()  %>% addMarkers(popup= url )
+my_map
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
