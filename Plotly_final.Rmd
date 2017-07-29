@@ -15,13 +15,12 @@ knitr::opts_chunk$set(echo = FALSE)
 ```{r cars, echo = FALSE,message=FALSE, warning=FALSE}
 library(plotly, , quietly = TRUE)
 set.seed(12340)
-d <- diamonds[sample(nrow(diamonds), 5000), ]
-plot_ly(d, x = ~carat, y = ~price, color = ~log(price), size = ~carat) 
+d <- diamonds[sample(nrow(diamonds), 100), ]
+plot_ly(d, x = ~carat, y = ~price, color = ~price, size = ~carat) 
 
 ```
 
-## Thanks!! 
-#:)
+
 
 
 
