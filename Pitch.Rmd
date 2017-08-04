@@ -1,0 +1,51 @@
+---
+title: "Shiny App: Basic Stats Plotting"
+author: "Vimal"
+date: "8/5/2017"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Shiny app: Basic Stats Plotting
+
+This is an R Markdown presentation about my shiny app Basic Stats Plotting. My app is available at website <http://52.28.123.233:3838/StatApp/>.
+
+#### App has "About web-tool" tab describing how to use app
+#### App has FAQ tab for defining various plots
+#### App has various tabs for plotting with stepwise instructions to plot the data
+
+
+## Basic features of App
+
+### App can be used to generate basic plots used user-definrd data
+- Venn/euler (Venneuler) digram
+- Box plots
+- Beeswarm plots
+- Heatmap
+
+
+## What is Boxplot: Example 1
+
+```{r cars, echo = FALSE}
+set.seed(3000)
+set1 <- rnorm(50,0,1)
+set2 <- rnorm(50,0,5)
+set3 <- rnorm(50,0,15)
+
+boxplot(list(set1=set1,set2=set2,set3=set3), main ="This is Box plot")
+
+```
+
+## What is Heatmap: Example 2
+
+```{r, echo = FALSE}
+set.seed(3000)
+set1 <- rnorm(50,0,1)
+set2 <- rnorm(50,0,5)
+set3 <- rnorm(50,0,15)
+plot.data <- rbind(set1, set2 , set3)
+heatmap(plot.data, main ="This is Heatmap")
+
